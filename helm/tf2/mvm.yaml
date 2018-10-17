@@ -1,0 +1,5 @@
+image: tf2-mvm
+
+server:
+  name: Team Fortress MVM
+  description: Team Fortress 2 server

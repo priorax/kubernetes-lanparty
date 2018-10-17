@@ -22,25 +22,24 @@ spec:
         resources:
 {{ toYaml .Values.resources | indent 10 }}
         env:
-        - name: LAN
-          value: {{ .Values.server.lan | quote }}
         - name: SV_HOSTNAME
           value: {{ .Values.server.name | quote }}
         - name: MAP
           value: {{ .Values.server.default_map | quote }}
+        {{- if .Values.server.rcon_password }}
+        - name: MAPCYCLEFILE
+          value: {{ .Values.server.map_cycle_file }}
+        {{ end }}
+        {{- if .Values.server.rcon_password }}
         - name: RCON_PASSWORD
           valueFrom:
             secretKeyRef:
               name: {{ template "server.fullname" . }}
               key: rcon_password
-        - name: GAME_TYPE
-          value: {{ .Values.server.game_type | quote }}
-        - name: GAME_MODE
-          value: {{ .Values.server.game_mode | quote }}
-        volumesMounts:
-          - name: {{ template "server.fullname" . }}-configmap
-            mountPath: /steam/csgo/csgo/addons/sourcemod/configs/databases.cfg
-            subPath: databases.cfg
+        {{- end }}
+        - name: SV_DOWNLOADURL
+          value: auto
+                  
         ports:
         - name: server
           containerPort: 27015
@@ -48,7 +47,4 @@ spec:
         - name: rcon
           containerPort: 27015
           protocol: TCP
-      volumes:
-      - name: {{ template "server.fullname" . }}-configmap
-        configMap:
-          name: {{ template "server.fullname" . }}-configmap
+      

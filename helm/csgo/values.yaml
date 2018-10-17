@@ -1,6 +1,6 @@
 image: csgo
 imageTag: "latest"
-imagePrefix: minipete:5000/
+imagePrefix: squid:5000/
 
 resources:
   requests:

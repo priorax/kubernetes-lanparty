@@ -1,0 +1,18 @@
+image: tf2
+imageTag: latest
+webImage: tf2-prophunt-web
+webImageTag: "20181006-102327"
+imagePrefix: minipete:5000/
+
+resources:
+  requests:
+    memory: 500Mi
+    cpu: 500m
+
+server:
+  name: Team Fortress Server
+  description: Team Fortress 2 server
+  rcon_password: 
+  map_cycle_file: 
+  maxplayers: 24
+  default_map: cp_badlands

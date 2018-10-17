@@ -1,0 +1,14 @@
+name: minecraft
+version: 0.0.1
+appVersion: 0.0.1
+description: minecraft
+keywords:
+- game
+- server
+- minecraft
+home: https://www.opensourcelan.com
+sources:
+- https://github.com/OpenSourceLAN/gameservers-docker/tree/master/minecraft
+maintainers:
+- name: Chris Holman
+  email: chris@opensourcelan.com

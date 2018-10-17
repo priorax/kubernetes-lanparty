@@ -1,0 +1,14 @@
+name: tf2
+version: 0.0.1
+appVersion: 0.0.1
+description: Team Fortress 2
+keywords:
+- game
+- server
+- team fortress 
+home: https://www.opensourcelan.com
+sources:
+- https://github.com/OpenSourceLAN/gameservers-docker/tree/master/tf2-prophunt
+maintainers:
+- name: Chris Holman
+  email: chris@opensourcelan.com

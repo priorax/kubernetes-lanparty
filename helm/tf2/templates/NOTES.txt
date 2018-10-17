@@ -1,5 +1,5 @@
 
-{{ .Values.server.description }}
+TF2 Vanillap; Server.
 
 Server hostname is:
     {{ .Values.server.name | quote }}

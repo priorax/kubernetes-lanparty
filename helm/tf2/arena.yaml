@@ -1,0 +1,4 @@
+server:
+  map_cycle_file: mapcycle_quickplay_arena.txt
+  default_map: arena_watchtower
+  name: TF2 Arena Server

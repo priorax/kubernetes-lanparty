@@ -1,0 +1,34 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "server.fullname" . }}
+  labels:
+    app: {{ template "server.fullname" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  template:
+    metadata:
+      labels:
+        app: {{ template "server.fullname" . }}
+    spec:
+      containers:
+      - name: server
+        image: "{{ .Values.imagePrefix}}{{ .Values.image }}:{{ .Values.imageTag }}"
+        imagePullPolicy: Always
+        tty: true
+        stdin: true
+        resources:
+{{ toYaml .Values.resources | indent 10 }}
+        env:
+          - name: HOSTNAME
+            value: {{ .Values.server.name | quote }}
+        ports:
+        - name: server
+          containerPort: 25565
+          protocol: UDP
+        - name: server-udp
+          containerPort: 25565
+          protocol: TCP
+      

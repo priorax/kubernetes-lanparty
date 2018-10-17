@@ -1,0 +1,5 @@
+image: csgo-gg
+
+server:
+  name: CS:GO GunGame
+  description: CS:GO Gun Game Server

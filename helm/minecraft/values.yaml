@@ -1,0 +1,12 @@
+image: bukkit
+imageTag: latest
+imagePrefix: squid:5000/
+
+resources:
+  requests:
+    memory: 1000Mi
+    cpu: 750m
+
+server:
+  fullname: Minecraft
+  name: PAX Server 1

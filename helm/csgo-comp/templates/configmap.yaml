@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+   name: {{ template "server.fullname" . }}-configmap
+   labels:
+    app: {{ template "server.fullname" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+data:
+  databases.cfg: |
+    "Databases"
+    {
+      "driver_default"		"mysql"
+      // When specifying "host", you may use an IP address, a hostname, or a socket file path
+      "default"
+      {
+        "driver"			"default"
+        "host"				"localhost"
+        "database"			"sourcemod"
+        "user"				"root"
+        "pass"				""
+        //"timeout"			"0"
+        //"port"			"0"
+      }
+      "simplestats"
+      {
+          "driver"                        "mysql"
+          "host"                          "{{ .Values.database.host }}"
+          "database"                      "{{ .Values.database.db }}"
+          "user"                          "{{ .Values.database.user }}"
+          "pass"                          "{{ .Values.database.pass }}"
+      }
+      "storage-local"
+      {
+        "driver"			"sqlite"
+        "database"			"sourcemod-local"
+      }
+      "clientprefs"
+      {
+        "driver"			"sqlite"
+        "host"				"localhost"
+        "database"			"clientprefs-sqlite"
+        "user"				"root"
+        "pass"				""
+        //"timeout"			"0"
+        //"port"			"0"
+      }
+    }

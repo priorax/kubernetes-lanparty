@@ -1,0 +1,4 @@
+server:
+  map_cycle_file: mapcycle_quickplay_payload.txt
+  default_map: pl_goldrush
+  name: Payload Server

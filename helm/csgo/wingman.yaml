@@ -1,0 +1,5 @@
+image: csgo-wingman
+
+server:
+  name: CS:GO Wingman
+  description: CS:GO Wingman Server
