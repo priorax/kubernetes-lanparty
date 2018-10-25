@@ -1,0 +1,10 @@
+image: csgo-wingman-ls
+
+server:
+  rcon_password: ThisIsATestPassword
+  name: CS:GO Competitive Wingman
+  description: CS:GO Wingman Server
+  default_map: gd_rialto
+  lan: 1
+  game_type: 0
+  game_mode: 2
