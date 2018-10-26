@@ -13,6 +13,8 @@ spec:
       labels:
         app: {{ template "server.fullname" . }}
     spec:
+      imagePullSecrets:
+      - name: "{{ .Values.imageSecret }}"
       containers:
       - name: server
         image: "{{ .Values.imagePrefix}}{{ .Values.image }}:{{ .Values.imageTag }}"

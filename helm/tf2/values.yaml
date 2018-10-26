@@ -2,7 +2,8 @@ image: tf2
 imageTag: latest
 webImage: tf2-prophunt-web
 webImageTag: "20181006-102327"
-imagePrefix: minipete:5000/
+imagePrefix: dockerreg.lanadmins.net/
+imageSecret: dockerreglanadminsnet
 
 resources:
   requests:

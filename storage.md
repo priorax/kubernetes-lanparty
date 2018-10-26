@@ -36,7 +36,7 @@ Then you can add the `volumes` and `volumeMounts` properties to your Pod spec:
     spec:
       containers:
       - name: tron
-        image: squid:5000/armagetron
+        image: dockerreg.lanadmins.net:5000/armagetron
         env:
           - name: SERVER_NAME
             value: Test Server lolol222

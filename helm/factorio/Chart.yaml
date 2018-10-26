@@ -1,15 +1,14 @@
-name: csgo-comp-wingman
+name: factorio
 version: 0.0.2
 appVersion: 0.0.2
-description: CSGO Vanilla
+description: factorio
 keywords:
 - game
 - server
-- csgo
-- counterstrike
+- factorio
 home: https://www.opensourcelan.com
 sources:
-- https://github.com/OpenSourceLAN/gameservers-docker/tree/master/csgo
+- https://github.com/OpenSourceLAN/gameservers-docker/tree/master/factorio
 maintainers:
 - name: Chris Holman
   email: chris@opensourcelan.com

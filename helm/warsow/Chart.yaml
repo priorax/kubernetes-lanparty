@@ -1,0 +1,14 @@
+name: warsow
+version: 0.0.1
+appVersion: 0.0.1
+description: warsow
+keywords:
+- game
+- server
+- warsow
+home: https://www.opensourcelan.com
+sources:
+- https://github.com/OpenSourceLAN/gameservers-docker/tree/master/warsow
+maintainers:
+- name: Chris Holman
+  email: chris@opensourcelan.com

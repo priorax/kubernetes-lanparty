@@ -1,4 +1,4 @@
-image: bukkit
+image: reflex-arena
 imageTag: latest
 imagePrefix: dockerreg.lanadmins.net/
 imageSecret: dockerreglanadminsnet
@@ -9,5 +9,8 @@ resources:
     cpu: 750m
 
 server:
-  fullname: Minecraft
-  name: PAX Server
+  fullname: Reflex Comp Server
+  refPassword: ThisIsATestPassword
+  description: Reflex Comp Server
+  lan: 1
+  

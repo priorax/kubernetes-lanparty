@@ -1,3 +1,4 @@
+---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -24,29 +25,19 @@ spec:
         resources:
 {{ toYaml .Values.resources | indent 10 }}
         env:
-        - name: SV_HOSTNAME
-          value: {{ .Values.server.name | quote }}
-        - name: MAP
-          value: {{ .Values.server.default_map | quote }}
-        - name: MAPCYCLEFILE
-          value: map_cycle_file
-        {{- if .Values.server.rcon_password }}
-        - name: RCON_PASSWORD
-          value: {{ .Values.server.rcon_password | quote }}
-        {{- end }}
-        - name: SV_DOWNLOADURL
-          value: auto
-      - name: web
-        image: "{{ .Values.imagePrefix}}{{ .Values.webImage }}:{{ .Values.webImageTag }}"
-        imagePullPolicy: Always
-        resources:
-{{ toYaml .Values.resources | indent 10 }}
-        
+          - name: SERVERNAME
+            value: {{ .Values.server.fullname | quote }}
+          - name: REFPASSWORD
+            value: {{ .Values.server.refPassword | quote }}
+          - name: MAXPLAYERS
+            value: "5"
         ports:
         - name: server
-          containerPort: 27015
-          protocol: UDP
-        - name: rcon
-          containerPort: 27015
+          containerPort: 25787
           protocol: TCP
-      
+        - name: serverurd
+          containerPort: 25787
+          protocol: UDP
+        - name: serverdisc
+          containerPort: 25797
+          protocol: TCP

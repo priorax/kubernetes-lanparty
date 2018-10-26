@@ -13,6 +13,8 @@ spec:
       labels:
         app: {{ template "server.fullname" . }}
     spec:
+      imagePullSecrets:
+      - name: "{{ .Values.imageSecret }}"
       containers:
       - name: server
         image: "{{ .Values.imagePrefix}}{{ .Values.image }}:{{ .Values.imageTag }}"
@@ -25,7 +27,7 @@ spec:
         - name: LAN
           value: {{ .Values.server.lan | quote }}
         - name: SV_HOSTNAME
-          value: {{ .Values.server.name | quote }}
+          value: {{ .Values.server.name }} {{ .Values.server_num}} 
         - name: MAP
           value: {{ .Values.server.default_map | quote }}
         - name: RCON_PASSWORD
@@ -37,6 +39,10 @@ spec:
           value: {{ .Values.server.game_type | quote }}
         - name: GAME_MODE
           value: {{ .Values.server.game_mode | quote }}
+        {{ if .Values.server.svPassword }}
+        - name: SV_PASSWORD
+          value: {{ .Values.server.svPassword | quote }}
+        {{ end }}
         volumesMounts:
           - name: {{ template "server.fullname" . }}-configmap
             mountPath: /steam/csgo/csgo/addons/sourcemod/configs/databases.cfg

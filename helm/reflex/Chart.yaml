@@ -1,15 +1,14 @@
-name: csgo-comp-wingman
+name: reflex
 version: 0.0.2
 appVersion: 0.0.2
-description: CSGO Vanilla
+description: reflex
 keywords:
 - game
 - server
-- csgo
-- counterstrike
+- reflex
 home: https://www.opensourcelan.com
 sources:
-- https://github.com/OpenSourceLAN/gameservers-docker/tree/master/csgo
+- https://github.com/OpenSourceLAN/gameservers-docker/tree/master/reflex
 maintainers:
 - name: Chris Holman
   email: chris@opensourcelan.com

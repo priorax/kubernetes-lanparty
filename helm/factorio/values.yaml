@@ -1,4 +1,4 @@
-image: bukkit
+image: factorio
 imageTag: latest
 imagePrefix: dockerreg.lanadmins.net/
 imageSecret: dockerreglanadminsnet
@@ -9,5 +9,5 @@ resources:
     cpu: 750m
 
 server:
-  fullname: Minecraft
+  fullname: Factorio
   name: PAX Server

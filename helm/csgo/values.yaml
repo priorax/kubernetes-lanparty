@@ -1,6 +1,7 @@
 image: csgo
 imageTag: "latest"
-imagePrefix: squid:5000/
+imagePrefix: dockerreg.lanadmins.net/
+imageSecret: dockerreglanadminsnet
 
 resources:
   requests:

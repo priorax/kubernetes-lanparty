@@ -1,6 +1,7 @@
 image: csgo-comp-ls
 imageTag: latest
-imagePrefix: squid:5000/
+imagePrefix: dockerreg.lanadmins.net/
+imageSecret: dockerreglanadminsnet
 
 resources:
   requests:
@@ -8,18 +9,18 @@ resources:
     cpu: 1500m
 
 server:
-  name: CSGO Comp Server
+  name: PAX Aus CSGO 5v5 Comp Server
   description: CSGO Comp Server of Success
-  rcon_password: null
+  rcon_password: 
   default_map: de_overpass
   lan: 1
   game_type: 0
   game_mode: 1
   # If left blank a password will be generated for you
   rconPassword: 
-
+  svPassword: TestServerKtxh
 database:
-  host: "test"
-  db: "test"
-  user: "test"
-  pass: "test"
+  host: csgoportal-csgo-portal-db.server.lan
+  db: "csgoportal"
+  user: "csgoportal"
+  pass: ""

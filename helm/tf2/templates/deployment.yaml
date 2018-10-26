@@ -13,6 +13,8 @@ spec:
       labels:
         app: {{ template "server.fullname" . }}
     spec:
+      imagePullSecrets:
+      - name: "{{ .Values.imageSecret }}"
       containers:
       - name: server
         image: "{{ .Values.imagePrefix}}{{ .Values.image }}:{{ .Values.imageTag }}"
@@ -47,4 +49,3 @@ spec:
         - name: rcon
           containerPort: 27015
           protocol: TCP
-      
