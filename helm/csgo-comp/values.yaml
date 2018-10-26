@@ -11,14 +11,15 @@ resources:
 server:
   name: PAX Aus CSGO 5v5 Comp Server
   description: CSGO Comp Server of Success
-  rcon_password: 
+  rcon_password: ThisIsATestPassword
   default_map: de_overpass
+  other_args: " +tv_enable 1 " 
   lan: 1
   game_type: 0
   game_mode: 1
   # If left blank a password will be generated for you
-  rconPassword: 
-  svPassword: TestServerKtxh
+  rconPassword: ThisIsATestPassword
+  svPassword: Test
 database:
   host: csgoportal-csgo-portal-db.server.lan
   db: "csgoportal"

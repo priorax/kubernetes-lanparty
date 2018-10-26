@@ -12,6 +12,7 @@ spec:
     metadata:
       labels:
         app: {{ template "server.fullname" . }}
+        id: {{ .Values.server_num | quote }}
     spec:
       imagePullSecrets:
       - name: "{{ .Values.imageSecret }}"
@@ -42,6 +43,8 @@ spec:
         {{ if .Values.server.svPassword }}
         - name: SV_PASSWORD
           value: {{ .Values.server.svPassword | quote }}
+        - name: OTHER_ARgS
+          value: {{ .Values.server.other_args }}
         {{ end }}
         volumesMounts:
           - name: {{ template "server.fullname" . }}-configmap
